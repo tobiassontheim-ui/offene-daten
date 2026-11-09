@@ -26,6 +26,9 @@
       "path": "daten/got-gebuehrenverzeichnis.csv",
       "format": "csv",
       "encoding": "utf-8",
+      "dialect": {
+        "delimiter": ";"
+      },
       "homepage": "https://tobiassontheim.de/daten/got-gebuehrenverzeichnis/",
       "sources": [
         {
@@ -76,6 +79,9 @@
       "path": "daten/goz-gebuehrenverzeichnis.csv",
       "format": "csv",
       "encoding": "utf-8",
+      "dialect": {
+        "delimiter": ";"
+      },
       "homepage": "https://tobiassontheim.de/daten/goz-gebuehrenverzeichnis/",
       "sources": [
         {
@@ -136,6 +142,9 @@
       "path": "daten/festzuschuesse-zahnersatz.csv",
       "format": "csv",
       "encoding": "utf-8",
+      "dialect": {
+        "delimiter": ";"
+      },
       "homepage": "https://tobiassontheim.de/daten/festzuschuesse-zahnersatz/",
       "sources": [
         {
@@ -221,6 +230,9 @@
       "path": "daten/landesfoerderung-barrierefreier-umbau.csv",
       "format": "csv",
       "encoding": "utf-8",
+      "dialect": {
+        "delimiter": ";"
+      },
       "homepage": "https://tobiassontheim.de/daten/landesfoerderung-barrierefreier-umbau/",
       "sources": [
         {
@@ -341,6 +353,9 @@
       "path": "daten/verfahrensfreie-vorhaben.csv",
       "format": "csv",
       "encoding": "utf-8",
+      "dialect": {
+        "delimiter": ";"
+      },
       "homepage": "https://tobiassontheim.de/daten/verfahrensfreie-vorhaben/",
       "sources": [
         {
@@ -506,6 +521,9 @@
       "path": "daten/grenzbebauung.csv",
       "format": "csv",
       "encoding": "utf-8",
+      "dialect": {
+        "delimiter": ";"
+      },
       "homepage": "https://tobiassontheim.de/daten/grenzbebauung/",
       "sources": [
         {
@@ -626,6 +644,9 @@
       "path": "daten/waermepumpe-grenzabstand.csv",
       "format": "csv",
       "encoding": "utf-8",
+      "dialect": {
+        "delimiter": ";"
+      },
       "homepage": "https://tobiassontheim.de/daten/waermepumpe-grenzabstand/",
       "sources": [
         {
@@ -756,6 +777,9 @@
       "path": "daten/grenzabstand-pflanzen.csv",
       "format": "csv",
       "encoding": "utf-8",
+      "dialect": {
+        "delimiter": ";"
+      },
       "homepage": "https://tobiassontheim.de/daten/grenzabstand-pflanzen/",
       "sources": [
         {
