@@ -1,5 +1,7 @@
 # Offene Daten aus amtlichen Quellen
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24093574.svg)](https://doi.org/10.5281/zenodo.24093574)
+
 8 Tabellen mit zusammen 1.623 Zeilen, aufbereitet aus Gesetzen, Verordnungen und amtlichen Verzeichnissen.
 Die Spalte „Amtliche Quelle“ nennt die Originalquellen; die Erläuterungsseite zeigt Rechenweg und Kontext. Datenwörterbuch, Versionen und Änderungsprotokoll: https://tobiassontheim.de/daten/.
 
