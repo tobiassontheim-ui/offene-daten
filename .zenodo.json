@@ -1,0 +1,28 @@
+{
+  "title": "Offene Daten aus amtlichen Quellen",
+  "upload_type": "dataset",
+  "language": "deu",
+  "license": "cc-by-4.0",
+  "creators": [
+    {
+      "name": "Sontheim, Tobias"
+    }
+  ],
+  "description": "Aufbereitete Tabellen aus amtlichen Quellen (Gebührenordnungen GOT und GOZ, Festzuschüsse Zahnersatz, Landesförderung barrierefreier Umbau, Landesbauordnungen und Nachbarrecht) mit Fundstellen. CC BY 4.0 gilt nur für die eigene Aufbereitung (Zusammenstellung, berechnete Spalten); Gesetzes- und Verordnungstexte sowie amtliche Bekanntmachungen sind gemeinfrei (§ 5 UrhG); Rechte Dritter an Ausgangsdaten bleiben unberührt. Metadaten, Versionen und Änderungsprotokoll: https://tobiassontheim.de/daten/",
+  "keywords": [
+    "Open Data",
+    "Deutschland",
+    "GOT",
+    "GOZ",
+    "Festzuschuss",
+    "TSE",
+    "Landesbauordnung"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://tobiassontheim.de/daten/",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    }
+  ]
+}

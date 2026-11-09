@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Bitte zitieren Sie die Daten mit diesen Angaben und nennen Sie die amtliche Quelle. CC BY 4.0 gilt nur für die eigene Aufbereitung; Gesetzes- und Verordnungstexte sowie amtliche Bekanntmachungen sind gemeinfrei (§ 5 UrhG)."
+title: "Offene Daten aus amtlichen Quellen"
+type: dataset
+authors:
+  - family-names: Sontheim
+    given-names: Tobias
+    website: "https://tobiassontheim.de/tobias-sontheim/"
+version: "2026-11-09"
+date-released: "2026-11-09"
+url: "https://tobiassontheim.de/daten/"
+license: CC-BY-4.0
+keywords: [GOT, GOZ, Festzuschuss, TSE, Landesbauordnung, Open Data, Deutschland]

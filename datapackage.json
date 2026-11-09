@@ -1,0 +1,873 @@
+{
+  "profile": "tabular-data-package",
+  "name": "offene-daten-tobias-sontheim",
+  "title": "Offene Daten aus amtlichen Quellen (Tobias Sontheim)",
+  "version": "2026-11-09",
+  "homepage": "https://tobiassontheim.de/daten/",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/",
+      "title": "CC BY 4.0 für die eigene Aufbereitung; amtliche Werke gemeinfrei (§ 5 UrhG)"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Tobias Sontheim",
+      "role": "author",
+      "path": "https://tobiassontheim.de/tobias-sontheim/"
+    }
+  ],
+  "resources": [
+    {
+      "name": "got-gebuehrenverzeichnis",
+      "title": "GOT-Gebührenverzeichnis mit Preisen (alle Positionen)",
+      "description": "Alle 1005 Positionen der Gebührenordnung für Tierärzte (GOT 2022) mit einfachem Satz sowie 2-fachem und 3-fachem Satz in Euro netto, gegliedert nach Fachgebiet.",
+      "path": "daten/got-gebuehrenverzeichnis.csv",
+      "format": "csv",
+      "encoding": "utf-8",
+      "homepage": "https://tobiassontheim.de/daten/got-gebuehrenverzeichnis/",
+      "sources": [
+        {
+          "title": "GOT 2022, Anlage (Gebührenverzeichnis)",
+          "path": "https://www.gesetze-im-internet.de/got_2022/anlage.html"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "nr",
+            "title": "Nr",
+            "type": "string"
+          },
+          {
+            "name": "bezeichnung",
+            "title": "Leistung",
+            "type": "string"
+          },
+          {
+            "name": "thema",
+            "title": "Fachgebiet",
+            "type": "string"
+          },
+          {
+            "name": "einfach",
+            "title": "1-facher Satz (EUR netto)",
+            "type": "number"
+          },
+          {
+            "name": "zweifach",
+            "title": "2-facher Satz (EUR netto)",
+            "type": "number"
+          },
+          {
+            "name": "dreifach",
+            "title": "3-facher Satz (EUR netto)",
+            "type": "number"
+          }
+        ],
+        "primaryKey": "nr"
+      }
+    },
+    {
+      "name": "goz-gebuehrenverzeichnis",
+      "title": "GOZ-Gebührenverzeichnis mit Euro-Beträgen",
+      "description": "Alle 209 GOZ-Nummern mit Punktzahl und Gebühr beim 1,0-, 2,3- und 3,5-fachen Satz (Punktwert 5,62421 Cent). Regel: Der 2,3-fache Satz bildet die durchschnittliche Leistung ab; darüber nur bei Besonderheiten (§ 5 Abs. 2 GOZ) mit schriftlicher Begründung je Leistung in der Rechnung (§ 10 Abs. 3 GOZ); über 3,5-fach nur mit schriftlicher Vereinbarung vor der Behandlung (§ 2 GOZ).",
+      "path": "daten/goz-gebuehrenverzeichnis.csv",
+      "format": "csv",
+      "encoding": "utf-8",
+      "homepage": "https://tobiassontheim.de/daten/goz-gebuehrenverzeichnis/",
+      "sources": [
+        {
+          "title": "GOZ, Anlage 1 (Gebührenverzeichnis)",
+          "path": "https://www.gesetze-im-internet.de/goz_1987/anlage_1.html"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "nr",
+            "title": "Nr",
+            "type": "string"
+          },
+          {
+            "name": "bezeichnung",
+            "title": "Leistung",
+            "type": "string"
+          },
+          {
+            "name": "abschnitt",
+            "title": "Abschnitt",
+            "type": "string"
+          },
+          {
+            "name": "punkte",
+            "title": "Punkte",
+            "type": "integer"
+          },
+          {
+            "name": "f10",
+            "title": "1,0-fach (EUR)",
+            "type": "number"
+          },
+          {
+            "name": "f23",
+            "title": "2,3-fach (EUR)",
+            "type": "number"
+          },
+          {
+            "name": "f35",
+            "title": "3,5-fach (EUR)",
+            "type": "number"
+          },
+          {
+            "name": "bestimmung",
+            "title": "Abrechnungsbestimmung (Verordnungstext)",
+            "type": "string"
+          }
+        ],
+        "primaryKey": "nr"
+      }
+    },
+    {
+      "name": "festzuschuesse-zahnersatz",
+      "title": "Festzuschüsse Zahnersatz ab 01.01.2026 (alle Befunde)",
+      "description": "Alle 45 Befunde der Festzuschuss-Richtlinie mit Betrag der Regelversorgung (gesamt sowie aufgeteilt in zahnärztliches Honorar und Material/Labor) und Festzuschuss bei 60, 70, 75 und 100 Prozent, wie vom G-BA nach § 56 Abs. 4 SGB V bekannt gemacht. Zusätzlich die Sätze für Bewilligungen ab 01.01.2027 (50/60/65 %, BGBl. 2026 I Nr. 228) – rechnerisch auf Basis der Regelversorgungsbeträge 2026, da die Beträge 2027 noch nicht bekannt gemacht sind – und die Differenz bei 10 Jahren Bonusheft.",
+      "path": "daten/festzuschuesse-zahnersatz.csv",
+      "format": "csv",
+      "encoding": "utf-8",
+      "homepage": "https://tobiassontheim.de/daten/festzuschuesse-zahnersatz/",
+      "sources": [
+        {
+          "title": "GKV-Spitzenverband: Festzuschuss-Beträge",
+          "path": "https://www.gkv-spitzenverband.de/media/dokumente/krankenversicherung_1/zahnaerztliche_versorgung/rili_g_ba/2026-01-01-FZ-Betraege.pdf"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "befund",
+            "title": "Befund",
+            "type": "string"
+          },
+          {
+            "name": "text",
+            "title": "Beschreibung",
+            "type": "string"
+          },
+          {
+            "name": "gesamt",
+            "title": "Regelversorgung gesamt (EUR)",
+            "type": "number"
+          },
+          {
+            "name": "z60",
+            "title": "Festzuschuss 60 % (EUR)",
+            "type": "number"
+          },
+          {
+            "name": "z70",
+            "title": "70 % (EUR)",
+            "type": "number"
+          },
+          {
+            "name": "z75",
+            "title": "75 % (EUR)",
+            "type": "number"
+          },
+          {
+            "name": "z100",
+            "title": "100 % (EUR)",
+            "type": "number"
+          },
+          {
+            "name": "n50",
+            "title": "ab 01.01.2027: 50 % (EUR, rechnerisch auf Basis 2026)",
+            "type": "number"
+          },
+          {
+            "name": "n60",
+            "title": "ab 01.01.2027: 60 % (EUR, rechnerisch)",
+            "type": "number"
+          },
+          {
+            "name": "n65",
+            "title": "ab 01.01.2027: 65 % (EUR, rechnerisch)",
+            "type": "number"
+          },
+          {
+            "name": "diff10",
+            "title": "Weniger Zuschuss bei 10 Jahren Bonus (EUR, rechnerisch)",
+            "type": "number"
+          },
+          {
+            "name": "honorar",
+            "title": "davon zahnärztliches Honorar (EUR)",
+            "type": "number"
+          },
+          {
+            "name": "materialLabor",
+            "title": "davon Material und Labor (EUR)",
+            "type": "number"
+          }
+        ],
+        "primaryKey": "befund"
+      }
+    },
+    {
+      "name": "landesfoerderung-barrierefreier-umbau",
+      "title": "Landesförderung für Treppenlift und barrierefreien Umbau (alle 16 Länder)",
+      "description": "Förderprogramme aller 16 Bundesländer für Treppenlift und barrierefreien Umbau: Träger, Art (Zuschuss oder Darlehen), Höhe, Status (offen/geschlossen), Antragsstelle und Quelle. Status und Bedingungen der Landesprogramme können sich jederzeit ändern; maßgeblich ist die verlinkte Programmseite.",
+      "path": "daten/landesfoerderung-barrierefreier-umbau.csv",
+      "format": "csv",
+      "encoding": "utf-8",
+      "homepage": "https://tobiassontheim.de/daten/landesfoerderung-barrierefreier-umbau/",
+      "sources": [
+        {
+          "title": "Baden-Württemberg: L-Bank",
+          "path": "https://www.l-bank.de/produkte/wohnimmobilien/eigentumsfinanzierung-bw-z-15-darlehen-schwerbehinderte.html"
+        },
+        {
+          "title": "Bayern: Freistaat Bayern (Bayerisches Wohnungsbauprogramm)",
+          "path": "https://www.stmb.bayern.de/wohnen/wohnraum_nutzen/barrierefreieswohnen/index.php"
+        },
+        {
+          "title": "Berlin: Investitionsbank Berlin (IBB)",
+          "path": "https://www.ibb.de/de/foerderprogramme/ibb-wohnraum-modernisieren.html"
+        },
+        {
+          "title": "Brandenburg: ILB",
+          "path": "https://www.ilb.de/de/wohnungsbau/uebersicht-der-foerderprogramme/behindertengerechte-anpassung-von-vorhandenem-wohnraum/"
+        },
+        {
+          "title": "Bremen: Bremer Aufbau-Bank (BAB)",
+          "path": "https://www.bab-bremen.de/de/page/programm/rund-ums-haus"
+        },
+        {
+          "title": "Hamburg: IFB Hamburg",
+          "path": "https://www.ifbhh.de/foerderprogramm/barrierefreier-umbau-von-selbstgenutzten-eigenheimen"
+        },
+        {
+          "title": "Hessen: WIBank",
+          "path": "https://www.wibank.de/wibank/behindertengerechter-umbau-von-wohneigentum"
+        },
+        {
+          "title": "Mecklenburg-Vorpommern: Landesförderinstitut M-V (LFI)",
+          "path": "https://www.lfi-mv.de/foerderfinder/personenaufzuege-und-lifte-barrierearmes-wohnen/"
+        },
+        {
+          "title": "Niedersachsen: NBank",
+          "path": "https://www.nbank.de/medien/nb-media/Downloads/Programminformation/Produktinformationen/Produktinformation-Modernisierung-von-selbstgenutztem-Wohneigentum.pdf"
+        },
+        {
+          "title": "Nordrhein-Westfalen: NRW.BANK",
+          "path": "https://www.nrwbank.de/de/foerderung/foerderprodukte/15342/eigentumsfoerderung---modernisierung.html"
+        },
+        {
+          "title": "Rheinland-Pfalz: ISB Rheinland-Pfalz",
+          "path": "https://isb.rlp.de/foerderung/505.html"
+        },
+        {
+          "title": "Saarland: Sozialministerium Saarland",
+          "path": "https://www.saarland.de/masfg/DE/portale/sozialesleben/leistungensoziales/wohnraum/wohnraum.html"
+        },
+        {
+          "title": "Sachsen: Sächsische Aufbaubank (SAB)",
+          "path": "https://www.sab.sachsen.de/wohnraumanpassung"
+        },
+        {
+          "title": "Sachsen-Anhalt: Investitionsbank Sachsen-Anhalt",
+          "path": "https://www.ib-sachsen-anhalt.de/de/unternehmen/wohnen-vermieten/modern/"
+        },
+        {
+          "title": "Schleswig-Holstein: IB.SH",
+          "path": "https://www.ib-sh.de/produkt/modernisierungszuschuss-fuer-selbstnutzer-aktuell-keine-antragstellung-mehr-moeglich/"
+        },
+        {
+          "title": "Thüringen: Thüringer Aufbaubank (TAB)",
+          "path": "https://www.aufbaubank.de/foerderprogramme/thueringer-barrierefreiheitsfoerderprogramm-thuebaff-ab-2026"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "land",
+            "title": "Land",
+            "type": "string"
+          },
+          {
+            "name": "programm",
+            "title": "Programm",
+            "type": "string"
+          },
+          {
+            "name": "traeger",
+            "title": "Träger",
+            "type": "string"
+          },
+          {
+            "name": "art",
+            "title": "Art",
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "title": "Status",
+            "type": "string"
+          },
+          {
+            "name": "foerderung",
+            "title": "Förderung",
+            "type": "string"
+          },
+          {
+            "name": "antrag",
+            "title": "Antrag",
+            "type": "string"
+          },
+          {
+            "name": "quelle",
+            "title": "Quelle",
+            "type": "string"
+          }
+        ],
+        "primaryKey": "land"
+      }
+    },
+    {
+      "name": "verfahrensfreie-vorhaben",
+      "title": "Verfahrensfreie Garten- und Anbauvorhaben je Bundesland",
+      "description": "Grenzen, bis zu denen 13 typische Vorhaben (Gartenhaus, Carport, Terrassenüberdachung, Pool, Zaun u. a.) nach den Landesbauordnungen aller 16 Länder verfahrensfrei sind – mit Fundstelle und Quelle je Zeile. Verfahrensfrei heißt nur: kein Bauantrag; andere Vorschriften gelten weiter.",
+      "path": "daten/verfahrensfreie-vorhaben.csv",
+      "format": "csv",
+      "encoding": "utf-8",
+      "homepage": "https://tobiassontheim.de/daten/verfahrensfreie-vorhaben/",
+      "sources": [
+        {
+          "title": "Landesbauordnung für Baden-Württemberg (LBO)",
+          "path": "https://dejure.org/gesetze/LBO/Anhang_1.html"
+        },
+        {
+          "title": "Bayerische Bauordnung (BayBO)",
+          "path": "https://www.gesetze-bayern.de/Content/Document/BayBO-57"
+        },
+        {
+          "title": "Bauordnung für Berlin (BauO Bln)",
+          "path": "https://gesetze.berlin.de/perma?j=BauO_BE_!_61"
+        },
+        {
+          "title": "Brandenburgische Bauordnung (BbgBO)",
+          "path": "https://bravors.brandenburg.de/gesetze/bbgbo_2016"
+        },
+        {
+          "title": "Bremische Landesbauordnung (BremLBO)",
+          "path": "https://gesetzblatt.bremen.de/fastmedia/218/2024_06_25_GBl_Nr_0060_signed.pdf"
+        },
+        {
+          "title": "Hamburgische Bauordnung (HBauO)",
+          "path": "https://www.landesrecht-hamburg.de/bsha/document/jlr-NNLHH000064FC"
+        },
+        {
+          "title": "Hessische Bauordnung (HBO)",
+          "path": "https://www.rv.hessenrecht.hessen.de/perma?j=BauO_HE_Anlage"
+        },
+        {
+          "title": "Landesbauordnung Mecklenburg-Vorpommern (LBauO M-V)",
+          "path": "https://www.landesrecht-mv.de/bsmv/document/jlr-NNLMV000070AENN00000000159"
+        },
+        {
+          "title": "Niedersächsische Bauordnung (NBauO)",
+          "path": "https://voris.wolterskluwer-online.de/browse/document/7fae4c92-7f76-39ab-91af-07e1f8e825ce"
+        },
+        {
+          "title": "Landesbauordnung 2018 (BauO NRW 2018)",
+          "path": "https://recht.nrw.de/lrgv/gesetz/01092026-landesbauordnung-2018-bauo-nrw-2018/"
+        },
+        {
+          "title": "Landesbauordnung Rheinland-Pfalz (LBauO)",
+          "path": "https://www.landesrecht.rlp.de/bsrp/document/jlr-NNLRP00005B3ENN00000000204"
+        },
+        {
+          "title": "Landesbauordnung Saarland (LBO)",
+          "path": "https://recht.saarland.de/bssl/document/jlr-NNLSL00009DF9NN00000000238"
+        },
+        {
+          "title": "Sächsische Bauordnung (SächsBO)",
+          "path": "https://www.revosax.sachsen.de/vorschrift/1779"
+        },
+        {
+          "title": "Bauordnung des Landes Sachsen-Anhalt (BauO LSA)",
+          "path": "https://www.landesrecht.sachsen-anhalt.de/perma?j=BauO_ST_!_60"
+        },
+        {
+          "title": "Landesbauordnung für das Land Schleswig-Holstein (LBO)",
+          "path": "https://www.gesetze-rechtsprechung.sh.juris.de/perma?j=BauO_SH_!_61"
+        },
+        {
+          "title": "Thüringer Bauordnung (ThürBO)",
+          "path": "https://landesrecht.thueringen.de/bsth/document/jlr-NNLTH00003894NN00000000137"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "land",
+            "title": "Bundesland",
+            "type": "string"
+          },
+          {
+            "name": "vorhaben",
+            "title": "Vorhaben",
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "title": "Status (frei/bedingt/pflichtig)",
+            "type": "string"
+          },
+          {
+            "name": "rauminhalt_m3",
+            "title": "Rauminhalt bis m³",
+            "type": "integer"
+          },
+          {
+            "name": "rauminhalt_aussen_m3",
+            "title": "Außenbereich bis m³",
+            "type": "integer"
+          },
+          {
+            "name": "flaeche_m2",
+            "title": "Fläche bis m²",
+            "type": "integer"
+          },
+          {
+            "name": "hoehe_m",
+            "title": "Höhe bis m",
+            "type": "number"
+          },
+          {
+            "name": "wandhoehe_m",
+            "title": "Wandhöhe bis m",
+            "type": "number"
+          },
+          {
+            "name": "tiefe_m",
+            "title": "Tiefe bis m",
+            "type": "number"
+          },
+          {
+            "name": "laenge_m",
+            "title": "Länge bis m",
+            "type": "integer"
+          },
+          {
+            "name": "grenzabstand_m",
+            "title": "Mindestabstand Grenze m",
+            "type": "integer"
+          },
+          {
+            "name": "aussenbereich",
+            "title": "im Außenbereich",
+            "type": "string"
+          },
+          {
+            "name": "fundstelle",
+            "title": "Fundstelle",
+            "type": "string"
+          },
+          {
+            "name": "quelle",
+            "title": "Quelle (URL)",
+            "type": "string"
+          },
+          {
+            "name": "seite",
+            "title": "Erklärung (URL)",
+            "type": "string"
+          },
+          {
+            "name": "einschraenkung",
+            "title": "Einschränkung",
+            "type": "string"
+          },
+          {
+            "name": "fassung",
+            "title": "Gilt ab / Fassung vom",
+            "type": "string"
+          }
+        ],
+        "primaryKey": "land"
+      }
+    },
+    {
+      "name": "grenzbebauung",
+      "title": "Grenzbebauung und Abstandsflächen je Bundesland",
+      "description": "Für alle 16 Länder: zulässige mittlere Wandhöhe und Länge von Garagen und Nebengebäuden direkt an der Grundstücksgrenze sowie die Regel-Tiefe der Abstandsfläche, mit Fundstellen.",
+      "path": "daten/grenzbebauung.csv",
+      "format": "csv",
+      "encoding": "utf-8",
+      "homepage": "https://tobiassontheim.de/daten/grenzbebauung/",
+      "sources": [
+        {
+          "title": "Landesbauordnung für Baden-Württemberg (LBO)",
+          "path": "https://dejure.org/gesetze/LBO/Anhang_1.html"
+        },
+        {
+          "title": "Bayerische Bauordnung (BayBO)",
+          "path": "https://www.gesetze-bayern.de/Content/Document/BayBO-57"
+        },
+        {
+          "title": "Bauordnung für Berlin (BauO Bln)",
+          "path": "https://gesetze.berlin.de/perma?j=BauO_BE_!_61"
+        },
+        {
+          "title": "Brandenburgische Bauordnung (BbgBO)",
+          "path": "https://bravors.brandenburg.de/gesetze/bbgbo_2016"
+        },
+        {
+          "title": "Bremische Landesbauordnung (BremLBO)",
+          "path": "https://gesetzblatt.bremen.de/fastmedia/218/2024_06_25_GBl_Nr_0060_signed.pdf"
+        },
+        {
+          "title": "Hamburgische Bauordnung (HBauO)",
+          "path": "https://www.landesrecht-hamburg.de/bsha/document/jlr-NNLHH000064FC"
+        },
+        {
+          "title": "Hessische Bauordnung (HBO)",
+          "path": "https://www.rv.hessenrecht.hessen.de/perma?j=BauO_HE_Anlage"
+        },
+        {
+          "title": "Landesbauordnung Mecklenburg-Vorpommern (LBauO M-V)",
+          "path": "https://www.landesrecht-mv.de/bsmv/document/jlr-NNLMV000070AENN00000000159"
+        },
+        {
+          "title": "Niedersächsische Bauordnung (NBauO)",
+          "path": "https://voris.wolterskluwer-online.de/browse/document/7fae4c92-7f76-39ab-91af-07e1f8e825ce"
+        },
+        {
+          "title": "Landesbauordnung 2018 (BauO NRW 2018)",
+          "path": "https://recht.nrw.de/lrgv/gesetz/01092026-landesbauordnung-2018-bauo-nrw-2018/"
+        },
+        {
+          "title": "Landesbauordnung Rheinland-Pfalz (LBauO)",
+          "path": "https://www.landesrecht.rlp.de/bsrp/document/jlr-NNLRP00005B3ENN00000000204"
+        },
+        {
+          "title": "Landesbauordnung Saarland (LBO)",
+          "path": "https://recht.saarland.de/bssl/document/jlr-NNLSL00009DF9NN00000000238"
+        },
+        {
+          "title": "Sächsische Bauordnung (SächsBO)",
+          "path": "https://www.revosax.sachsen.de/vorschrift/1779"
+        },
+        {
+          "title": "Bauordnung des Landes Sachsen-Anhalt (BauO LSA)",
+          "path": "https://www.landesrecht.sachsen-anhalt.de/perma?j=BauO_ST_!_60"
+        },
+        {
+          "title": "Landesbauordnung für das Land Schleswig-Holstein (LBO)",
+          "path": "https://www.gesetze-rechtsprechung.sh.juris.de/perma?j=BauO_SH_!_61"
+        },
+        {
+          "title": "Thüringer Bauordnung (ThürBO)",
+          "path": "https://landesrecht.thueringen.de/bsth/document/jlr-NNLTH00003894NN00000000137"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "land",
+            "title": "Bundesland",
+            "type": "string"
+          },
+          {
+            "name": "wandhoehe_m",
+            "title": "Wandhöhe bis m",
+            "type": "number"
+          },
+          {
+            "name": "laenge_je_grenze_m",
+            "title": "Länge je Grenze bis m",
+            "type": "integer"
+          },
+          {
+            "name": "laenge_gesamt_m",
+            "title": "Länge insgesamt bis m",
+            "type": "integer"
+          },
+          {
+            "name": "fundstelle_grenze",
+            "title": "Fundstelle Grenzbebauung",
+            "type": "string"
+          },
+          {
+            "name": "abstandsflaeche",
+            "title": "Abstandsfläche",
+            "type": "string"
+          },
+          {
+            "name": "fundstelle_abstand",
+            "title": "Fundstelle Abstandsfläche",
+            "type": "string"
+          },
+          {
+            "name": "seite",
+            "title": "Erklärung (URL)",
+            "type": "string"
+          }
+        ],
+        "primaryKey": "land"
+      }
+    },
+    {
+      "name": "waermepumpe-grenzabstand",
+      "title": "Wärmepumpe: Verfahrensfreiheit und Grenzabstand je Bundesland",
+      "description": "Für alle 16 Länder: ob und wie Wärmepumpen verfahrensfrei sind und welche Höhe und Länge sie an der Grundstücksgrenze ohne eigene Abstandsfläche haben dürfen, mit Fundstellen aus den Landesbauordnungen.",
+      "path": "daten/waermepumpe-grenzabstand.csv",
+      "format": "csv",
+      "encoding": "utf-8",
+      "homepage": "https://tobiassontheim.de/daten/waermepumpe-grenzabstand/",
+      "sources": [
+        {
+          "title": "LBO",
+          "path": "https://www.landesrecht-bw.de/bsbw/document/jlr-NNLBW00007BCC"
+        },
+        {
+          "title": "BayBO",
+          "path": "https://www.gesetze-bayern.de/Content/Document/BayBO-6"
+        },
+        {
+          "title": "BauO Bln",
+          "path": "https://gesetze.berlin.de/perma?j=BauO_BE_!_6"
+        },
+        {
+          "title": "BbgBO",
+          "path": "https://bravors.brandenburg.de/gesetze/bbgbo_2016"
+        },
+        {
+          "title": "BremLBO",
+          "path": "https://gesetzblatt.bremen.de/fastmedia/218/2024_06_25_GBl_Nr_0060_signed.pdf"
+        },
+        {
+          "title": "HBauO",
+          "path": "https://www.landesrecht-hamburg.de/bsha/document/jlr-NNLHH000064FC"
+        },
+        {
+          "title": "HBO",
+          "path": "https://www.rv.hessenrecht.hessen.de/perma?j=BauO_HE_!_6"
+        },
+        {
+          "title": "LBauO M-V",
+          "path": "https://www.landesrecht-mv.de/bsmv/document/jlr-NNLMV000070AENN00000000027"
+        },
+        {
+          "title": "NBauO",
+          "path": "https://voris.wolterskluwer-online.de/browse/document/e807db8f-7202-30e1-a88b-8f1ff76cf135"
+        },
+        {
+          "title": "BauO NRW 2018",
+          "path": "https://recht.nrw.de/lrgv/gesetz/01092026-landesbauordnung-2018-bauo-nrw-2018/"
+        },
+        {
+          "title": "LBauO",
+          "path": "https://www.landesrecht.rlp.de/bsrp/document/jlr-NNLRP00005B3ENN00000000035"
+        },
+        {
+          "title": "LBO",
+          "path": "https://recht.saarland.de/bssl/document/jlr-NNLSL00009DF9NN00000000038"
+        },
+        {
+          "title": "SächsBO",
+          "path": "https://www.revosax.sachsen.de/vorschrift/1779"
+        },
+        {
+          "title": "BauO LSA",
+          "path": "https://www.landesrecht.sachsen-anhalt.de/perma?j=BauO_ST_!_6"
+        },
+        {
+          "title": "LBO",
+          "path": "https://www.gesetze-rechtsprechung.sh.juris.de/perma?j=BauO_SH_!_6"
+        },
+        {
+          "title": "ThürBO",
+          "path": "https://landesrecht.thueringen.de/bsth/document/jlr-NNLTH00003894NN00000000137"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "land",
+            "title": "Bundesland",
+            "type": "string"
+          },
+          {
+            "name": "verfahrensfrei",
+            "title": "verfahrensfrei als",
+            "type": "string"
+          },
+          {
+            "name": "fundstelle_verfahrensfrei",
+            "title": "Fundstelle Verfahrensfreiheit",
+            "type": "string"
+          },
+          {
+            "name": "grenzregel",
+            "title": "Grenzregel",
+            "type": "string"
+          },
+          {
+            "name": "hoehe_m",
+            "title": "Höhe bis m",
+            "type": "integer"
+          },
+          {
+            "name": "laenge_m",
+            "title": "Länge je Grenze bis m",
+            "type": "integer"
+          },
+          {
+            "name": "bedingung",
+            "title": "Bedingung",
+            "type": "string"
+          },
+          {
+            "name": "fundstelle_grenze",
+            "title": "Fundstelle Grenze",
+            "type": "string"
+          },
+          {
+            "name": "quelle",
+            "title": "Quelle (URL)",
+            "type": "string"
+          },
+          {
+            "name": "seite",
+            "title": "Erklärung (URL)",
+            "type": "string"
+          }
+        ],
+        "primaryKey": "land"
+      }
+    },
+    {
+      "name": "grenzabstand-pflanzen",
+      "title": "Grenzabstände für Hecken, Bäume und Sträucher je Bundesland",
+      "description": "Mindestabstände von Pflanzen zur Grundstücksgrenze aus den Nachbarrechtsgesetzen aller 16 Länder, mit Fundstelle; Länder ohne Landesregelung sind als solche gekennzeichnet (dort gilt § 910 BGB).",
+      "path": "daten/grenzabstand-pflanzen.csv",
+      "format": "csv",
+      "encoding": "utf-8",
+      "homepage": "https://tobiassontheim.de/daten/grenzabstand-pflanzen/",
+      "sources": [
+        {
+          "title": "Nachbarrechtsgesetz für Baden-Württemberg (NRG)",
+          "path": "https://dejure.org/gesetze/NRG/16.html"
+        },
+        {
+          "title": "Gesetz zur Ausführung des Bürgerlichen Gesetzbuchs (AGBGB)",
+          "path": "https://www.gesetze-bayern.de/Content/Document/BayAGBGB-47"
+        },
+        {
+          "title": "Berliner Nachbarrechtsgesetz (NachbG Bln)",
+          "path": "https://gesetze.berlin.de/bsbe/document/jlr-NNLBE0000495CNN00000000043"
+        },
+        {
+          "title": "Brandenburgisches Nachbarrechtsgesetz (BbgNRG)",
+          "path": "https://bravors.brandenburg.de/de/gesetze-212898"
+        },
+        {
+          "title": "Bürgerliches Gesetzbuch (kein Landesgesetz) (BGB)",
+          "path": "https://www.gesetze-im-internet.de/bgb/__910.html"
+        },
+        {
+          "title": "Bürgerliches Gesetzbuch (kein Landesgesetz) (BGB)",
+          "path": "https://www.gesetze-im-internet.de/bgb/__910.html"
+        },
+        {
+          "title": "Hessisches Nachbarrechtsgesetz (NachbG HE)",
+          "path": "https://www.rv.hessenrecht.hessen.de/perma?j=NachbG_HE_!_38"
+        },
+        {
+          "title": "Bürgerliches Gesetzbuch (kein Landesgesetz) (BGB)",
+          "path": "https://www.gesetze-im-internet.de/bgb/__910.html"
+        },
+        {
+          "title": "Niedersächsisches Nachbarrechtsgesetz (NNachbG)",
+          "path": "https://voris.wolterskluwer-online.de/browse/document/b57ba2bb-59c3-3f43-80f9-a5e18c140d05"
+        },
+        {
+          "title": "Nachbarrechtsgesetz (NachbG NRW)",
+          "path": "https://recht.nrw.de/lrgv/gesetz/29122021-nachbarrechtsgesetz-nachbg-nrw/"
+        },
+        {
+          "title": "Landesnachbarrechtsgesetz (LNRG)",
+          "path": "https://www.landesrecht.rlp.de/bsrp/document/jlr-NNLRP00005B14NN00000000076"
+        },
+        {
+          "title": "Saarländisches Nachbarrechtsgesetz (NachbG SL)",
+          "path": "https://recht.saarland.de/bssl/document/jlr-NNLSL0000A2EDNN00000000066"
+        },
+        {
+          "title": "Sächsisches Nachbarrechtsgesetz (SächsNRG)",
+          "path": "https://www.revosax.sachsen.de/vorschrift/20110"
+        },
+        {
+          "title": "Nachbarschaftsgesetz (NbG)",
+          "path": "https://www.landesrecht.sachsen-anhalt.de/bsst/document/jlr-NNLST000040FDNN00000000050"
+        },
+        {
+          "title": "Nachbarrechtsgesetz für das Land Schleswig-Holstein (NachbG Schl.-H.)",
+          "path": "https://www.gesetze-rechtsprechung.sh.juris.de/perma?j=NachbG_SH_!_37"
+        },
+        {
+          "title": "Thüringer Nachbarrechtsgesetz (ThürNRG)",
+          "path": "https://landesrecht.thueringen.de/bsth/document/jlr-NNLTH00003FF6NN00000000071"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "land",
+            "title": "Bundesland",
+            "type": "string"
+          },
+          {
+            "name": "gesetz",
+            "title": "Gesetz",
+            "type": "string"
+          },
+          {
+            "name": "art",
+            "title": "Art (Hecke/Pflanze)",
+            "type": "string"
+          },
+          {
+            "name": "was",
+            "title": "Pflanze",
+            "type": "string"
+          },
+          {
+            "name": "abstand_m",
+            "title": "Abstand m",
+            "type": "number"
+          },
+          {
+            "name": "abstand_text",
+            "title": "Abstand (Text)",
+            "type": "string"
+          },
+          {
+            "name": "fundstelle",
+            "title": "Fundstelle",
+            "type": "string"
+          },
+          {
+            "name": "seite",
+            "title": "Erklärung (URL)",
+            "type": "string"
+          }
+        ],
+        "primaryKey": "land"
+      }
+    }
+  ]
+}
